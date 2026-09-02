@@ -56,3 +56,13 @@ Creación de un portal web interactivo que ofrece servicios de consultoría, cap
 | ID | Historia de Usuario | Rol / Actor | Quiero (Funcionalidad) | Para (Beneficio / Objetivo) | Criterios de Aceptación |
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | **HU07** | Pago en línea y acceso a descargas | Cliente | Realizar el pago de cursos o guías tácticas en línea | Obtener acceso inmediato al material. | - Pasarela de pago segura integrada.<br>- Generación de comprobante/factura digital.<br>- Desbloqueo automático del contenido o enlaces de descarga al confirmar el pago. |
+
+## Modelo entidad-relación
+
+![modelo](modelo,etidad,relacion.drawio.png)
+## modelo relacional
+![modelo](relacional.png)
+## modelo fisico
+![modelo](screen09.jpg)
+## base de datos
+![modelo](screen08.jpg)
