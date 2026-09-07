@@ -1,4 +1,6 @@
 # BIMESTRAL: TACTICAL MIND & SHOOTING
+
+link sitiio:http://tactical-mind.infinityfreeapp.com/
 ## Planteamiento del Problema
 ### Causas
 Estrés de alta intensidad no gestionado: Personal de seguridad, deportistas de tiro y operadores en campo enfrentan niveles de adrenalina que alteran el ritmo cardíaco, la visión de túnel y la toma de decisiones.
