@@ -66,3 +66,5 @@ Creación de un portal web interactivo que ofrece servicios de consultoría, cap
 ![modelo](screen09.jpg)
 ## base de datos
 ![modelo](screen08.jpg)
+## pantallazo pagina
+![modelo](screen18.jpg)

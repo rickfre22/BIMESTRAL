@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['id_usuario'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +17,11 @@
     <header>
         <div class="logo">TACTICAL MIND & SHOOTING</div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="instructor.html">Instructor</a>
-            <a href="programas.html">Programas</a>
-            <a href="consultoria.html">Consultorías</a>
-            <a href="login.html" class="btn-primary active">Acceso Usuarios</a>
+            <a href="index.php">Inicio</a>
+            <a href="instructor.php">Instructor</a>
+            <a href="programas.php">Programas</a>
+            <a href="consultoria.php">Consultorías</a>
+            <a href="login.php" class="btn-primary active">Acceso Usuarios</a>
         </nav>
     </header>
 
@@ -23,10 +30,10 @@
         <p class="subtitle">Inicia sesión para acceder a tus capacitaciones o regístrate como nuevo cliente.</p>
 
         <div class="auth-container">
-            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+            <!-- INICIO DE SESIÓN -->
             <div class="card">
                 <h2>Iniciar Sesión</h2>
-                <form action="dashboard.html" method="POST">
+                <form action="procesar_login.php" method="POST">
                     <div class="form-group">
                         <label for="login_correo">Correo Electrónico:</label>
                         <input type="email" id="login_correo" name="correo" placeholder="ejemplo@correo.com" required>
@@ -39,10 +46,10 @@
                 </form>
             </div>
 
-            <!-- FORMULARIO DE REGISTRO -->
+            <!-- REGISTRO -->
             <div class="card">
                 <h2>Crear Cuenta</h2>
-                <form action="registro_exitoso.html" method="POST">
+                <form action="procesar_registro.php" method="POST">
                     <div class="form-group">
                         <label for="reg_nombre">Nombre Completo:</label>
                         <input type="text" id="reg_nombre" name="nombre" placeholder="Tu nombre" required>

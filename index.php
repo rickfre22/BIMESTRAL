@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +13,15 @@
     <header>
         <div class="logo">TACTICAL MIND & SHOOTING</div>
         <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="instructor.html">Instructor</a>
-            <a href="programas.html">Programas</a>
-            <a href="consultoria.html">Consultorías</a>
-            <a href="login.html" class="btn-primary">Acceso Usuarios</a>
+            <a href="index.php" class="active">Inicio</a>
+            <a href="instructor.php">Instructor</a>
+            <a href="programas.php">Programas</a>
+            <a href="consultoria.php">Consultorías</a>
+            <?php if (isset($_SESSION['id_usuario'])): ?>
+                <a href="logout.php" class="btn-primary">Salir (<?php echo htmlspecialchars($_SESSION['nombre']); ?>)</a>
+            <?php else: ?>
+                <a href="login.php" class="btn-primary">Acceso Usuarios</a>
+            <?php endif; ?>
         </nav>
     </header>
 
@@ -24,8 +31,8 @@
             Plataforma especializada en acondicionamiento mental, respiración diafragmática y tiro de alta precisión para personal de seguridad y operadores tácticos.
         </p>
         <div class="hero-buttons">
-            <a href="programas.html" class="btn-primary">Ver Programas de Formación</a>
-            <a href="consultoria.html" class="btn-primary btn-secondary-action">Agendar Consultoría</a>
+            <a href="programas.php" class="btn-primary">Ver Programas de Formación</a>
+            <a href="consultoria.php" class="btn-primary btn-secondary-action">Agendar Consultoría</a>
         </div>
     </main>
 

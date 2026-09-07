@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +13,15 @@
     <header>
         <div class="logo">TACTICAL MIND & SHOOTING</div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="instructor.html" class="active">Instructor</a>
-            <a href="programas.html">Programas</a>
-            <a href="consultoria.html">Consultorías</a>
-            <a href="login.html" class="btn-primary">Acceso Usuarios</a>
+            <a href="index.php">Inicio</a>
+            <a href="instructor.php" class="active">Instructor</a>
+            <a href="programas.php">Programas</a>
+            <a href="consultoria.php">Consultorías</a>
+            <?php if (isset($_SESSION['id_usuario'])): ?>
+                <a href="logout.php" class="btn-primary">Salir (<?php echo htmlspecialchars($_SESSION['nombre']); ?>)</a>
+            <?php else: ?>
+                <a href="login.php" class="btn-primary">Acceso Usuarios</a>
+            <?php endif; ?>
         </nav>
     </header>
 
@@ -31,7 +38,7 @@
             <p>
                 Su metodología combina la disciplina de las Fuerzas Especiales con técnicas neurofisiológicas aplicadas para el control del ritmo cardíaco, eliminación de la visión de túnel y estabilización del pulso en tiradores de élite.
             </p>
-            <a href="consultoria.html" class="btn-primary">Solicitar Consultoría Privada con Miguel</a>
+            <a href="consultoria.php" class="btn-primary">Solicitar Consultoría Privada con Miguel</a>
         </div>
     </main>
 

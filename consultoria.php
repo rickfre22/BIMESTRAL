@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,17 +13,21 @@
     <header>
         <div class="logo">TACTICAL MIND & SHOOTING</div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="instructor.html">Instructor</a>
-            <a href="programas.html">Programas</a>
-            <a href="consultoria.html" class="active">Consultorías</a>
-            <a href="login.html" class="btn-primary">Acceso Usuarios</a>
+            <a href="index.php">Inicio</a>
+            <a href="instructor.php">Instructor</a>
+            <a href="programas.php">Programas</a>
+            <a href="consultoria.php" class="active">Consultorías</a>
+            <?php if (isset($_SESSION['id_usuario'])): ?>
+                <a href="logout.php" class="btn-primary">Salir (<?php echo htmlspecialchars($_SESSION['nombre']); ?>)</a>
+            <?php else: ?>
+                <a href="login.php" class="btn-primary">Acceso Usuarios</a>
+            <?php endif; ?>
         </nav>
     </header>
 
     <main class="container container-narrow">
         <h1 class="page-title">Reserva de Consultoría Personalizada</h1>
-        <form action="confirmacion.html" method="POST" class="form-card">
+        <form action="procesar_reserva.php" method="POST" class="form-card">
             <div class="form-group">
                 <label for="fecha_hora">Fecha y Hora de la Sesión:</label>
                 <input type="datetime-local" id="fecha_hora" name="fecha_hora" required>
