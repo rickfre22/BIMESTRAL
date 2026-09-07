@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS tirap_consultoria;
-USE tirap_consultoria;
-
 -- Tabla de Usuarios
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
