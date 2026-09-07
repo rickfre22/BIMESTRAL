@@ -59,12 +59,12 @@ Creación de un portal web interactivo que ofrece servicios de consultoría, cap
 
 ## Modelo entidad-relación
 
-![modelo](modelo,etidad,relacion.drawio.png)
+![modelo](teorico/modelo,etidad,relacion.drawio.png)
 ## modelo relacional
-![modelo](relacional.png)
+![modelo](teorico/relacional.png)
 ## modelo fisico
-![modelo](screen09.jpg)
+![modelo](teorico/screen09.jpg)
 ## base de datos
-![modelo](screen08.jpg)
+![modelo](teorico/screen08.jpg)
 ## pantallazo pagina
-![modelo](screen18.jpg)
+![modelo](teorico/screen18.jpg)
