@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 // Configuración para LOCALHOST (XAMPP / WAMP)
 $host = "localhost";
 $db   = "tirap_consultoria";
@@ -8,17 +7,11 @@ $pass = "";
 
 // Configuración para INFINITYFREE (Descomenta cuando subas al servidor)
 /*
-$host = "sqlXXX.infinityfree.com";
-$db   = "if0_XXXXXXXX_tirap_consultoria";
-$user = "if0_XXXXXXXX";
+$host = "sql203.infinityfree.com";
+$db   = "if0_42858141_tirap_consultoria";
+$user = "if0_42858141";
 $pass = "TU_CONTRASEÑA";
 */
-=======
-$host = "localhost";
-$db   = "tirap_consultoria";
-$user = "root";       // Cambia según tu configuración local/servidor
-$pass = "";           // Contraseña de tu MySQL
->>>>>>> 41adec8345cbb38faafb14cbf8ead12aa915f277
 
 try {
     $conexion = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
