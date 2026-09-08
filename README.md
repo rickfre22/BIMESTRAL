@@ -70,3 +70,4 @@ Creación de un portal web interactivo que ofrece servicios de consultoría, cap
 ![modelo](teorico/screen08.jpg)
 ## pantallazo pagina
 ![modelo](teorico/screen18.jpg)
+![modelo](teorico/screen8.jpg)

@@ -4,11 +4,11 @@ require_once 'conexion.php';
 
 $reservas_usuario = [];
 
-// Si el usuario inició sesión, consultamos sus reservas activas o pendientes
+// Si el usuario inició sesión, consultamos sus reservas
 if (isset($_SESSION['id_usuario'])) {
     try {
         $stmt = $conexion->prepare("
-            SELECT fecha_hora, modalidad, estado 
+            SELECT id_reserva, fecha_hora, modalidad, estado 
             FROM reservas 
             WHERE id_usuario = :id_usuario 
             ORDER BY fecha_hora DESC
@@ -16,7 +16,7 @@ if (isset($_SESSION['id_usuario'])) {
         $stmt->execute([':id_usuario' => $_SESSION['id_usuario']]);
         $reservas_usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        // Manejo silencioso o log de error si es necesario
+        // Manejo silencioso de errores
     }
 }
 ?>
@@ -63,10 +63,18 @@ if (isset($_SESSION['id_usuario'])) {
                                     <strong>Fecha:</strong> <?php echo date('d/m/Y H:i', strtotime($reserva['fecha_hora'])); ?><br>
                                     <strong>Modalidad:</strong> <?php echo htmlspecialchars($reserva['modalidad']); ?>
                                 </div>
-                                <div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
                                     <span style="background: #2e7d32; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold;">
                                         <?php echo htmlspecialchars($reserva['estado']); ?>
                                     </span>
+                                    
+                                    <!-- Botón de cancelación con confirmación JS -->
+                                    <form action="cancelar_reserva.php" method="POST" onsubmit="return confirm('¿Confirmas la cancelación de esta reserva?');" style="margin:0;">
+                                        <input type="hidden" name="id_reserva" value="<?php echo $reserva['id_reserva']; ?>">
+                                        <button type="submit" style="background: #c62828; color: white; border: none; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.85rem; cursor: pointer; font-weight: bold;">
+                                            Cancelar
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         <?php endforeach; ?>
